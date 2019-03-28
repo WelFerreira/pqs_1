@@ -5,7 +5,8 @@
     </head>
     <body>
 <?php
-$arquivo = fopen('https://raw.githubusercontent.com/laravel/laravel/master/app/Console/Kernel.php','r'); //URL git precisa ser RAW
+$url = "https://raw.githubusercontent.com/laravel/laravel/master/app/Console/Kernel.php";
+$arquivo = fopen($url,'r'); //URL git precisa ser RAW
 
 while(true) {
 $linha = fgets($arquivo);
@@ -13,6 +14,16 @@ if ($linha==null) break;
 echo $linha;
 echo "<br>";
 }
+
+$dir = substr($url,0,33);
+$file = substr($url,-10,-1);
+
+//echo $dir;
+//echo "<br>";
+//echo $file;
+//mkdir($dir);
+file_put_contents($file, print_r($arquivo, true));
+
 fclose($arquivo);
 ?>
     </body>
