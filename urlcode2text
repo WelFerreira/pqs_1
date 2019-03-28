@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teste</title>
+    </head>
+    <body>
+<?php
+$arquivo = fopen('https://raw.githubusercontent.com/laravel/laravel/master/app/Console/Kernel.php','r'); //URL git precisa ser RAW
+
+while(true) {
+$linha = fgets($arquivo);
+if ($linha==null) break;
+echo $linha;
+echo "<br>";
+}
+fclose($arquivo);
+?>
+    </body>
+</html>
