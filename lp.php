@@ -21,7 +21,7 @@
 						<?php
 
 						set_time_limit(120); //aumentando o tempo da execução do PHP para não dar time limit
-							
+							//$vetor = array('Java', 'Python', 'C++', 'C#', 'JavaScript', 'php', 'Objective-C', 'Perl', 'Ruby', 'Groovy', 'Swift');
 							$vetor = array('Java', 'Python', 'C++', 'C#', 'JavaScript', 'php', 'Objective-C', 'Perl', 'Ruby', 'Groovy', 'Swift', 'Dart', 'Lua', 'ABAP', 'Scala');
 							$qtd_repositorios = 10;
 
@@ -68,9 +68,6 @@
 									#	
 								
 							}	// fim do for
-
-
-							<input type=submit value='Meu Botão' />
 						?> 
 						
      </div> 
