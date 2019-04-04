@@ -67,12 +67,6 @@
                 </a>
               </li>
               
-              <li class="nav-item">
-                <a class="nav-link" href="#"
-                  <span data-feather="github"></span>
-                  Download repositorios
-                </a>
-              </li>
             </ul>
           </div>
         </nav>
