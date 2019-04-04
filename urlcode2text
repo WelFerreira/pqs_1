@@ -1,30 +1,40 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Teste</title>
-    </head>
-    <body>
 <?php
-$url = "https://raw.githubusercontent.com/laravel/laravel/master/app/Console/Kernel.php";
-$arquivo = fopen($url,'r'); //URL git precisa ser RAW
+//$url = "https://raw.githubusercontent.com/laravel/laravel/master/app/Console/Kernel.php";
+//$url = "https://github.com/trending/php";
+//$arquivo = fopen($url,'r'); //URL git precisa ser RAW
 
-while(true) {
-$linha = fgets($arquivo);
-if ($linha==null) break;
-echo $linha;
-echo "<br>";
+if ($fh = fopen('/home/sgi3/idvisual/teste_php_url.txt', 'r')) {
+    while (!feof($fh)) {
+        $line = fgets($fh);
+        //echo $line;
+    }
+fclose($fh);
 }
 
-$dir = substr($url,0,33);
-$file = substr($url,-10,-1);
-
-//echo $dir;
-//echo "<br>";
+$file = file_get_contents('/home/sgi3/idvisual/teste_php_url.txt');
 //echo $file;
-//mkdir($dir);
-file_put_contents($file, print_r($arquivo, true));
 
-fclose($arquivo);
+$file_lines = file('/home/sgi3/idvisual/teste_php_url.txt');
+
+foreach ($file_lines as $line) {
+    //echo $line;
+
+		$url = $line;
+
+		$arquivo = fopen($url,'r'); //URL github precisa ser RAW
+
+	while(true) {
+	$linha = fgets($arquivo);
+	if ($linha==null) break;
+	file_put_contents('/home/sgi3/idvisual/teste_php.txt', $linha, FILE_APPEND);
+	echo $linha;
+	echo "<br>";
+	}
+
+	fclose($arquivo);
+
+	}
+
 ?>
     </body>
 </html>
