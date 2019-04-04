@@ -20,55 +20,62 @@
 
 						<?php
 
-								$qtd_repositorios = 10;
+						set_time_limit(120); //aumentando o tempo da execução do PHP para não dar time limit
+							
+							$vetor = array('Java', 'Python', 'C++', 'C#', 'JavaScript', 'php', 'Objective-C', 'Perl', 'Ruby', 'Groovy', 'Swift', 'Dart', 'Lua', 'ABAP', 'Scala');
+							$qtd_repositorios = 10;
 
-								$url = "https://api.github.com/search/repositories?q=language:php&per_page=".$qtd_repositorios;
-								$opts = [
-								    'http' => [
-								        'method' => 'GET',
-								        'header' => [
-								                'User-Agent: PHP'
-								        ]
-								    ]
-								];
+							for($it=0; $it<15; $it++)
+							{
+								
+									sleep(5); // sleep para aumentar o tempo de consultas na API para não bloquear por RATE LIMIT.
+									$url = "https://api.github.com/search/repositories?q=language:".$vetor[$it]."&per_page=".$qtd_repositorios."&?client_id=f2fb8af26dade8fdde1b&client_secret=b85cd28a568afea9f77d6a5a2887818c687447a5";
+									$opts = [
+									    'http' => [
+									        'method' => 'GET',
+									        'header' => [
+									                'User-Agent: everton'
+									        ]
+									    ]
+									];
 
-								$json = file_get_contents($url, false, stream_context_create($opts));
-								$obj = json_decode($json);
-								$data = (array) $obj;
+									$json = file_get_contents($url, false, stream_context_create($opts));
+									$obj = json_decode($json);
+									$data = (array) $obj;
 
-								#echo "<pre>";
-								#var_dump($data);
-								#echo "</pre>";
+									#echo "<pre>";
+									#var_dump($data);
+									#echo "</pre>";
 
 
-								$xml = json_decode(json_encode($data),true);
-								for($i=0; $i<10; $i++)
-								{
-									echo $xml["items"][$i]["html_url"]; 
-
-									#echo ' <a href="' . $xml["items"][$i]["html_url"] . '/archive/master.zip" download="1.zip">Download repositorio</a>';
+									$xml = json_decode(json_encode($data),true);
+									echo "<b>$vetor[$it]</b>";
 									echo "<br>" ;
+									for($i=0; $i<$qtd_repositorios; $i++)
+									{
+										$n= $i +1; 
+										echo "Repositório ". $n  . ": ";
+										echo $xml["items"][$i]["html_url"]; 
 
-								}
-								#echo $xml["items"][0]["git_url"];
-								#echo "<br>";
-								#echo $xml["items"][1]["git_url"];
-								#	
+										#echo ' <a href="' . $xml["items"][$i]["html_url"] . '/archive/master.zip" download="1.zip">Download repositorio</a>';
+										echo "<br>" ;
+
+									} // fim do for
+									
+									#echo $xml["items"][0]["git_url"];
+									#echo "<br>";
+									#echo $xml["items"][1]["git_url"];
+									#	
 								
-								
-						?>
+							}	// fim do for
+
+
+							<input type=submit value='Meu Botão' />
+						?> 
 						
      </div> 
   
    
-
-
-<!-- Para alterar os icones entrar no site: https://feathericons.com/ -->
-
- <!-- Principal JavaScript do Bootstrap
-    ================================================== -->
-    <!-- Foi colocado no final para a página carregar mais rápido -->
-
     
 
 </body>
