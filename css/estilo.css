@@ -1,0 +1,45 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+
+}
+html, body{
+	height: 100%;
+}
+.container{
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+.clear{
+	clear: both;
+}
+header{
+	padding: 30px 2%;
+}
+
+header div.logo{
+	float: left;
+}
+
+header nav.desktop{
+	float: right;
+	position: relative;
+	top: 20px;
+}
+
+header nav.desktop ul{
+	list-style-type: none;
+}
+
+header nav.desktop ul li{
+	float: left;
+	font-size: 23px;
+	padding: 0 30px;
+}
+header nav.desktop a{
+	color: black;
+	text-decoration: none;
+}
