@@ -66,7 +66,12 @@
                   Listar repositorios
                 </a>
               </li>
-              
+              <li class="nav-item">
+                <a class="nav-link" href="analisador.php"
+                  <span data-feather="github"></span>
+                  Analisar 
+                </a>
+              </li>
             </ul>
           </div>
         </nav>
