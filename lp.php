@@ -56,8 +56,11 @@
 										$n= $i +1; 
 										echo "Repositório ". $n  . ": ";
 										echo $xml["items"][$i]["html_url"]; 
+										$d_branch= '/archive/'. $xml["items"][$i]["default_branch"]; 
 
-										echo ' <a href="' . $xml["items"][$i]["html_url"] . '/archive/master.zip" download="1.zip">Download repositorio</a>';
+										echo ' <a href="' . $xml["items"][$i]["html_url"] . $d_branch  . '/s.zip" 
+
+										download="1.zip">Download repositorio</a>';
 										echo "<br>" ;
 
 									} // fim do for
