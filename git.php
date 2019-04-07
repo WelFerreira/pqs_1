@@ -29,7 +29,7 @@
 <script type="text/javascript">
   $(document).ready(function(){
 
-    $("#container-fluid a").click(function (e){
+    $(".nav-item a").click(function (e){
       
       e.preventDefault();
       var href = $(this).attr('href');
@@ -43,6 +43,8 @@
     });
   });
   </script>
+
+  
 </head>
 
 <body>
@@ -66,7 +68,7 @@
                   Listar repositorios
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item2">
                 <a class="nav-link" href="analisador.php"
                   <span data-feather="github"></span>
                   Analisar 
