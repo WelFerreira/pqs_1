@@ -9,7 +9,7 @@
 
 							$files = new FilesystemIterator("../", FilesystemIterator::UNIX_PATHS);
 
-							$filtered = new RegexIterator($files, "/\.(java)$/i");
+							$filtered = new RegexIterator($files, "/\.(java|py|cpp|js|php|pl|rb|groovy|swift|dart|lua|abap|scala)$/i");
 
 							foreach($filtered as $file){
 
@@ -25,7 +25,7 @@
 
 							$files = new RecursiveIteratorIterator($files);
 
-							$filtered = new RegexIterator($files, "/\.(java)$/i");
+							$filtered = new RegexIterator($files, "/\.(java|py|cpp|js|php|pl|rb|groovy|swift|dart|lua|abap|scala)$/i");
 
 							foreach($filtered as $file){
 								$line = $file->getRealPath();
