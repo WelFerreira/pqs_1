@@ -23,9 +23,9 @@
 						set_time_limit(120); //aumentando o tempo da execução do PHP para não dar time limit
 							//$vetor = array('Java', 'Python', 'C++', 'C#', 'JavaScript', 'php', 'Objective-C', 'Perl', 'Ruby', 'Groovy', 'Swift');
 							$vetor = array('Java', 'Python', 'C++', 'C#', 'JavaScript', 'php', 'Objective-C', 'Perl', 'Ruby', 'Groovy', 'Swift', 'Dart', 'Lua', 'ABAP', 'Scala');
-							$qtd_repositorios = 3;
+							$qtd_repositorios = 10; //quantidade de repositorios
 
-							for($it=0; $it<3; $it++)
+							for($it=0; $it<15; $it++)
 							{
 								
 									sleep(5); // sleep para aumentar o tempo de consultas na API para não bloquear por RATE LIMIT.
