@@ -69,7 +69,7 @@
                 </a>
               </li>
               <li class="nav-item2">
-                <a class="nav-link" href="analisador.php"
+                <a class="nav-link" href="analisa_codigo.php"
                   <span data-feather="github"></span>
                   Analisar 
                 </a>
